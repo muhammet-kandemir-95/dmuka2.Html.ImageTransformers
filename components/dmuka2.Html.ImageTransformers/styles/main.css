@@ -1,0 +1,9 @@
+.dmuka2-image-transformers-animation-elements-parent {
+    position: relative;
+}
+
+.dmuka2-image-transformers-animation-element {
+    background-repeat: no-repeat;
+	position: absolute;
+	transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>dmuka2.Html.ImageTransformers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- We have to add this script before all scripts for create the namespaces of library -->
+	<script src="https://muhammet-kandemir-95.github.io/dmuka2/components/dmuka2/scripts/main.js"></script>
+
+	<!-- BEGIN dmuka2.Html.ImageTransformers -->
+	<link rel="stylesheet" type="text/css" media="screen" href="components/dmuka2.Html.ImageTransformers/styles/main.css">
+	<script src="components/dmuka2.Html.ImageTransformers/scripts/main.js"></script>
+	<!-- END dmuka2.Html.ImageTransformers -->
+</head>
+<body>
+	<!--
+		If we are adding "new image transformers" to own page, we are doing;
+		1 - Create a new div which has "dmuka2-image-transformers" class.
+		2 - Add images that we want inside div which has "dmuka2-image-transformers" class.
+		3 - We are following steps which are in "example" function in the scripts tag.
+	-->
+	<div class="dmuka2-image-transformers" id="example">
+		<img src="images/example1.jpg" /> 
+		<img src="images/example2.jpg" />
+		<img src="images/example3.jpg" />
+		<img src="images/example4.jpg" />
+		<img src="images/example5.jpg" />
+	</div>
+
+	<button style="margin-top:50px;" onclick="imageTransformers.counter++">Change Animation</button>
+
+	<!-- "example" function is here! -->
+	<script>
+		function example() {
+			// If you didn't add elements which are requirement, this wouldn't work. So you check it before call this functions.
+
+			// Call the component
+			// You can learn parameters descriptions with look the source.
+			var imageTransformers = new dmuka2.Html.ImageTransformers({
+				el: '#example',
+				animationTypes: ['random', 'stay', 'random', 'stayX', 'random', 'stayY', 'random', 'stayZ'],
+				counter: 1,
+				maxTransation: 3,
+				width: 300,
+				height: 300,
+				pieceCountHorizontal: 4,
+				pieceCountVertical: 4
+			});
+
+			window['imageTransformers'] = imageTransformers;
+		}
+		example();
+	</script>
+</body>
+</html>
